@@ -96,7 +96,7 @@ resource "aws_security_group" "app_server_security_group" {
 resource "aws_security_group" "database_security_group" {
   name        = "${var.project_name}-${var.environment}-database-sg"
   description = "enable mysql/aurora access on port 3306"
-  vpc_id      = 
+  vpc_id      = var.vpc_id
 
   ingress {
     description     = "mysql/aurora access"
